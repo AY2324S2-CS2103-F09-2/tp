@@ -9,6 +9,11 @@ import static java.util.Objects.requireNonNull;
 public class Remark {
     public final String value;
 
+    /**
+     * Comstructor for Remark.
+     *
+     * @param remark for the Person object.
+     */
     public Remark(String remark) {
         requireNonNull(remark);
         value = remark;
@@ -30,4 +35,5 @@ public class Remark {
     public int hashCode() {
         return value.hashCode();
     }
+
 }
