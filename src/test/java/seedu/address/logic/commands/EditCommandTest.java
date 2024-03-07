@@ -33,11 +33,14 @@ import seedu.address.testutil.PersonBuilder;
  */
 public class EditCommandTest {
 
+    /**
+    * Model follows the @TypicalPersons class
+    */
     private Model model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
 
     @Test
     public void execute_allFieldsSpecifiedUnfilteredList_success() {
-        Person editedPerson = new PersonBuilder().build();
+        Person editedPerson = new PersonBuilder().withRemark("She likes aardvarks.").build();
         EditPersonDescriptor descriptor = new EditPersonDescriptorBuilder(editedPerson).build();
         EditCommand editCommand = new EditCommand(INDEX_FIRST_PERSON, descriptor);
 
