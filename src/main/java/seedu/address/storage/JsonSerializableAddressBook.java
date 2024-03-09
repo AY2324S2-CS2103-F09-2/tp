@@ -19,16 +19,16 @@ import seedu.address.model.patient.Patient;
 @JsonRootName(value = "addressbook")
 class JsonSerializableAddressBook {
 
-    public static final String MESSAGE_DUPLICATE_PATIENT = "Patients list contains duplicate patient(s).";
+    public static final String MESSAGE_DUPLICATE_PERSON = "Persons list contains duplicate patient(s).";
 
-    private final List<JsonAdaptedPatient> patients = new ArrayList<>();
+    private final List<JsonAdaptedPerson> persons = new ArrayList<>();
 
     /**
-     * Constructs a {@code JsonSerializableAddressBook} with the given patients.
+     * Constructs a {@code JsonSerializableAddressBook} with the given persons.
      */
     @JsonCreator
-    public JsonSerializableAddressBook(@JsonProperty("patients") List<JsonAdaptedPatient> patients) {
-        this.patients.addAll(patients);
+    public JsonSerializableAddressBook(@JsonProperty("persons") List<JsonAdaptedPerson> persons) {
+        this.persons.addAll(persons);
     }
 
     /**
@@ -37,7 +37,7 @@ class JsonSerializableAddressBook {
      * @param source future changes to this will not affect the created {@code JsonSerializableAddressBook}.
      */
     public JsonSerializableAddressBook(ReadOnlyAddressBook source) {
-        patients.addAll(source.getPatientList().stream().map(JsonAdaptedPatient::new).collect(Collectors.toList()));
+        persons.addAll(source.getPersonList().stream().map(JsonAdaptedPerson::new).collect(Collectors.toList()));
     }
 
     /**
@@ -47,12 +47,12 @@ class JsonSerializableAddressBook {
      */
     public AddressBook toModelType() throws IllegalValueException {
         AddressBook addressBook = new AddressBook();
-        for (JsonAdaptedPatient jsonAdaptedPatient : patients) {
-            Patient patient = jsonAdaptedPatient.toModelType();
-            if (addressBook.hasPatient(patient)) {
-                throw new IllegalValueException(MESSAGE_DUPLICATE_PATIENT);
+        for (JsonAdaptedPerson jsonAdaptedPerson : persons) {
+            Patient patient = jsonAdaptedPerson.toModelType();
+            if (addressBook.hasPerson(patient)) {
+                throw new IllegalValueException(MESSAGE_DUPLICATE_PERSON);
             }
-            addressBook.addPatient(patient);
+            addressBook.addPerson(patient);
         }
         return addressBook;
     }

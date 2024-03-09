@@ -20,7 +20,7 @@ import seedu.address.model.tag.Tag;
 /**
  * Jackson-friendly version of {@link Patient}.
  */
-class JsonAdaptedPatient {
+class JsonAdaptedPerson {
 
     public static final String MISSING_FIELD_MESSAGE_FORMAT = "Patient's %s field is missing!";
 
@@ -31,12 +31,12 @@ class JsonAdaptedPatient {
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
 
     /**
-     * Constructs a {@code JsonAdaptedPatient} with the given patient details.
+     * Constructs a {@code JsonAdaptedPerson} with the given patient details.
      */
     @JsonCreator
-    public JsonAdaptedPatient(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-                              @JsonProperty("email") String email, @JsonProperty("address") String address,
-                              @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+    public JsonAdaptedPerson(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
+            @JsonProperty("email") String email, @JsonProperty("address") String address,
+            @JsonProperty("tags") List<JsonAdaptedTag> tags) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -49,7 +49,7 @@ class JsonAdaptedPatient {
     /**
      * Converts a given {@code Patient} into this class for Jackson use.
      */
-    public JsonAdaptedPatient(Patient source) {
+    public JsonAdaptedPerson(Patient source) {
         name = source.getName().fullName;
         phone = source.getPhone().value;
         email = source.getEmail().value;
@@ -65,9 +65,9 @@ class JsonAdaptedPatient {
      * @throws IllegalValueException if there were any data constraints violated in the adapted patient.
      */
     public Patient toModelType() throws IllegalValueException {
-        final List<Tag> patientTags = new ArrayList<>();
+        final List<Tag> personTags = new ArrayList<>();
         for (JsonAdaptedTag tag : tags) {
-            patientTags.add(tag.toModelType());
+            personTags.add(tag.toModelType());
         }
 
         if (name == null) {
@@ -102,7 +102,7 @@ class JsonAdaptedPatient {
         }
         final Address modelAddress = new Address(address);
 
-        final Set<Tag> modelTags = new HashSet<>(patientTags);
+        final Set<Tag> modelTags = new HashSet<>(personTags);
         return new Patient(modelName, modelPhone, modelEmail, modelAddress, modelTags);
     }
 

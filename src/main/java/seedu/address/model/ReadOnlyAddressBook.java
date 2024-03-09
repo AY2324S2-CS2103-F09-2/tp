@@ -9,9 +9,9 @@ import seedu.address.model.patient.Patient;
 public interface ReadOnlyAddressBook {
 
     /**
-     * Returns an unmodifiable view of the patients list.
-     * This list will not contain any duplicate patients.
+     * Returns an unmodifiable view of the persons list.
+     * This list will not contain any duplicate persons.
      */
-    ObservableList<Patient> getPatientList();
+    ObservableList<Patient> getPersonList();
 
 }

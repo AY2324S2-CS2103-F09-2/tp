@@ -33,7 +33,7 @@ public class ModelManager implements Model {
 
         this.addressBook = new AddressBook(addressBook);
         this.userPrefs = new UserPrefs(userPrefs);
-        filteredPatients = new FilteredList<>(this.addressBook.getPatientList());
+        filteredPatients = new FilteredList<>(this.addressBook.getPersonList());
     }
 
     public ModelManager() {
@@ -88,27 +88,27 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public boolean hasPatient(Patient patient) {
+    public boolean hasPerson(Patient patient) {
         requireNonNull(patient);
-        return addressBook.hasPatient(patient);
+        return addressBook.hasPerson(patient);
     }
 
     @Override
-    public void deletePatient(Patient target) {
-        addressBook.removePatient(target);
+    public void deletePerson(Patient target) {
+        addressBook.removePerson(target);
     }
 
     @Override
-    public void addPatient(Patient patient) {
-        addressBook.addPatient(patient);
-        updateFilteredPatientList(PREDICATE_SHOW_ALL_PATIENTS);
+    public void addPerson(Patient patient) {
+        addressBook.addPerson(patient);
+        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
     }
 
     @Override
-    public void setPatient(Patient target, Patient editedPatient) {
+    public void setPerson(Patient target, Patient editedPatient) {
         requireAllNonNull(target, editedPatient);
 
-        addressBook.setPatient(target, editedPatient);
+        addressBook.setPerson(target, editedPatient);
     }
 
     //=========== Filtered Patient List Accessors =============================================================
@@ -118,12 +118,12 @@ public class ModelManager implements Model {
      * {@code versionedAddressBook}
      */
     @Override
-    public ObservableList<Patient> getFilteredPatientList() {
+    public ObservableList<Patient> getFilteredPersonList() {
         return filteredPatients;
     }
 
     @Override
-    public void updateFilteredPatientList(Predicate<Patient> predicate) {
+    public void updateFilteredPersonList(Predicate<Patient> predicate) {
         requireNonNull(predicate);
         filteredPatients.setPredicate(predicate);
     }

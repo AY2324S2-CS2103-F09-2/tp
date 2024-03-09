@@ -14,7 +14,7 @@ import seedu.address.model.util.SampleDataUtil;
 /**
  * A utility class to help with building Patient objects.
  */
-public class PatientBuilder {
+public class PersonBuilder {
 
     public static final String DEFAULT_NAME = "Amy Bee";
     public static final String DEFAULT_PHONE = "85355255";
@@ -28,9 +28,9 @@ public class PatientBuilder {
     private Set<Tag> tags;
 
     /**
-     * Creates a {@code PatientBuilder} with the default details.
+     * Creates a {@code PersonBuilder} with the default details.
      */
-    public PatientBuilder() {
+    public PersonBuilder() {
         name = new Name(DEFAULT_NAME);
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
@@ -39,9 +39,9 @@ public class PatientBuilder {
     }
 
     /**
-     * Initializes the PatientBuilder with the data of {@code patientToCopy}.
+     * Initializes the PersonBuilder with the data of {@code patientToCopy}.
      */
-    public PatientBuilder(Patient patientToCopy) {
+    public PersonBuilder(Patient patientToCopy) {
         name = patientToCopy.getName();
         phone = patientToCopy.getPhone();
         email = patientToCopy.getEmail();
@@ -52,7 +52,7 @@ public class PatientBuilder {
     /**
      * Sets the {@code Name} of the {@code Patient} that we are building.
      */
-    public PatientBuilder withName(String name) {
+    public PersonBuilder withName(String name) {
         this.name = new Name(name);
         return this;
     }
@@ -60,7 +60,7 @@ public class PatientBuilder {
     /**
      * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Patient} that we are building.
      */
-    public PatientBuilder withTags(String ... tags) {
+    public PersonBuilder withTags(String ... tags) {
         this.tags = SampleDataUtil.getTagSet(tags);
         return this;
     }
@@ -68,7 +68,7 @@ public class PatientBuilder {
     /**
      * Sets the {@code Address} of the {@code Patient} that we are building.
      */
-    public PatientBuilder withAddress(String address) {
+    public PersonBuilder withAddress(String address) {
         this.address = new Address(address);
         return this;
     }
@@ -76,7 +76,7 @@ public class PatientBuilder {
     /**
      * Sets the {@code Phone} of the {@code Patient} that we are building.
      */
-    public PatientBuilder withPhone(String phone) {
+    public PersonBuilder withPhone(String phone) {
         this.phone = new Phone(phone);
         return this;
     }
@@ -84,7 +84,7 @@ public class PatientBuilder {
     /**
      * Sets the {@code Email} of the {@code Patient} that we are building.
      */
-    public PatientBuilder withEmail(String email) {
+    public PersonBuilder withEmail(String email) {
         this.email = new Email(email);
         return this;
     }

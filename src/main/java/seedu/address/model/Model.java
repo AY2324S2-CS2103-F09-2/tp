@@ -12,7 +12,7 @@ import seedu.address.model.patient.Patient;
  */
 public interface Model {
     /** {@code Predicate} that always evaluate to true */
-    Predicate<Patient> PREDICATE_SHOW_ALL_PATIENTS = unused -> true;
+    Predicate<Patient> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
 
     /**
      * Replaces user prefs data with the data in {@code userPrefs}.
@@ -55,19 +55,19 @@ public interface Model {
     /**
      * Returns true if a patient with the same identity as {@code patient} exists in the address book.
      */
-    boolean hasPatient(Patient patient);
+    boolean hasPerson(Patient patient);
 
     /**
      * Deletes the given patient.
      * The patient must exist in the address book.
      */
-    void deletePatient(Patient target);
+    void deletePerson(Patient target);
 
     /**
      * Adds the given patient.
      * {@code patient} must not already exist in the address book.
      */
-    void addPatient(Patient patient);
+    void addPerson(Patient patient);
 
     /**
      * Replaces the given patient {@code target} with {@code editedPatient}.
@@ -75,14 +75,14 @@ public interface Model {
      * The patient identity of {@code editedPatient} must not be the same as
      * another existing patient in the address book.
      */
-    void setPatient(Patient target, Patient editedPatient);
+    void setPerson(Patient target, Patient editedPatient);
 
     /** Returns an unmodifiable view of the filtered patient list */
-    ObservableList<Patient> getFilteredPatientList();
+    ObservableList<Patient> getFilteredPersonList();
 
     /**
      * Updates the filter of the filtered patient list to filter by the given {@code predicate}.
      * @throws NullPointerException if {@code predicate} is null.
      */
-    void updateFilteredPatientList(Predicate<Patient> predicate);
+    void updateFilteredPersonList(Predicate<Patient> predicate);
 }

@@ -6,7 +6,7 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PATIENTS;
+import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -48,58 +48,58 @@ public class EditCommand extends Command {
             + PREFIX_PHONE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com";
 
-    public static final String MESSAGE_EDIT_PATIENT_SUCCESS = "Edited Patient: %1$s";
+    public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Patient: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_PATIENT = "This patient already exists in the address book.";
+    public static final String MESSAGE_DUPLICATE_PERSON = "This patient already exists in the address book.";
 
     private final Index index;
-    private final EditPatientDescriptor editPatientDescriptor;
+    private final EditPersonDescriptor editPersonDescriptor;
 
     /**
      * @param index of the patient in the filtered patient list to edit
-     * @param editPatientDescriptor details to edit the patient with
+     * @param editPersonDescriptor details to edit the patient with
      */
-    public EditCommand(Index index, EditPatientDescriptor editPatientDescriptor) {
+    public EditCommand(Index index, EditPersonDescriptor editPersonDescriptor) {
         requireNonNull(index);
-        requireNonNull(editPatientDescriptor);
+        requireNonNull(editPersonDescriptor);
 
         this.index = index;
-        this.editPatientDescriptor = new EditPatientDescriptor(editPatientDescriptor);
+        this.editPersonDescriptor = new EditPersonDescriptor(editPersonDescriptor);
     }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Patient> lastShownList = model.getFilteredPatientList();
+        List<Patient> lastShownList = model.getFilteredPersonList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
-            throw new CommandException(Messages.MESSAGE_INVALID_PATIENT_DISPLAYED_INDEX);
+            throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
 
         Patient patientToEdit = lastShownList.get(index.getZeroBased());
-        Patient editedPatient = createEditedPatient(patientToEdit, editPatientDescriptor);
+        Patient editedPatient = createEditedPerson(patientToEdit, editPersonDescriptor);
 
-        if (!patientToEdit.isSamePatient(editedPatient) && model.hasPatient(editedPatient)) {
-            throw new CommandException(MESSAGE_DUPLICATE_PATIENT);
+        if (!patientToEdit.isSamePatient(editedPatient) && model.hasPerson(editedPatient)) {
+            throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         }
 
-        model.setPatient(patientToEdit, editedPatient);
-        model.updateFilteredPatientList(PREDICATE_SHOW_ALL_PATIENTS);
-        return new CommandResult(String.format(MESSAGE_EDIT_PATIENT_SUCCESS, Messages.format(editedPatient)));
+        model.setPerson(patientToEdit, editedPatient);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, Messages.format(editedPatient)));
     }
 
     /**
      * Creates and returns a {@code Patient} with the details of {@code patientToEdit}
-     * edited with {@code editPatientDescriptor}.
+     * edited with {@code editPersonDescriptor}.
      */
-    private static Patient createEditedPatient(Patient patientToEdit, EditPatientDescriptor editPatientDescriptor) {
+    private static Patient createEditedPerson(Patient patientToEdit, EditPersonDescriptor editPersonDescriptor) {
         assert patientToEdit != null;
 
-        Name updatedName = editPatientDescriptor.getName().orElse(patientToEdit.getName());
-        Phone updatedPhone = editPatientDescriptor.getPhone().orElse(patientToEdit.getPhone());
-        Email updatedEmail = editPatientDescriptor.getEmail().orElse(patientToEdit.getEmail());
-        Address updatedAddress = editPatientDescriptor.getAddress().orElse(patientToEdit.getAddress());
-        Set<Tag> updatedTags = editPatientDescriptor.getTags().orElse(patientToEdit.getTags());
+        Name updatedName = editPersonDescriptor.getName().orElse(patientToEdit.getName());
+        Phone updatedPhone = editPersonDescriptor.getPhone().orElse(patientToEdit.getPhone());
+        Email updatedEmail = editPersonDescriptor.getEmail().orElse(patientToEdit.getEmail());
+        Address updatedAddress = editPersonDescriptor.getAddress().orElse(patientToEdit.getAddress());
+        Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(patientToEdit.getTags());
 
         return new Patient(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags);
     }
@@ -117,14 +117,14 @@ public class EditCommand extends Command {
 
         EditCommand otherEditCommand = (EditCommand) other;
         return index.equals(otherEditCommand.index)
-                && editPatientDescriptor.equals(otherEditCommand.editPatientDescriptor);
+                && editPersonDescriptor.equals(otherEditCommand.editPersonDescriptor);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
                 .add("index", index)
-                .add("editPatientDescriptor", editPatientDescriptor)
+                .add("editPersonDescriptor", editPersonDescriptor)
                 .toString();
     }
 
@@ -132,20 +132,20 @@ public class EditCommand extends Command {
      * Stores the details to edit the patient with. Each non-empty field value will replace the
      * corresponding field value of the patient.
      */
-    public static class EditPatientDescriptor {
+    public static class EditPersonDescriptor {
         private Name name;
         private Phone phone;
         private Email email;
         private Address address;
         private Set<Tag> tags;
 
-        public EditPatientDescriptor() {}
+        public EditPersonDescriptor() {}
 
         /**
          * Copy constructor.
          * A defensive copy of {@code tags} is used internally.
          */
-        public EditPatientDescriptor(EditPatientDescriptor toCopy) {
+        public EditPersonDescriptor(EditPersonDescriptor toCopy) {
             setName(toCopy.name);
             setPhone(toCopy.phone);
             setEmail(toCopy.email);
@@ -216,16 +216,16 @@ public class EditCommand extends Command {
             }
 
             // instanceof handles nulls
-            if (!(other instanceof EditPatientDescriptor)) {
+            if (!(other instanceof EditPersonDescriptor)) {
                 return false;
             }
 
-            EditPatientDescriptor otherEditPatientDescriptor = (EditPatientDescriptor) other;
-            return Objects.equals(name, otherEditPatientDescriptor.name)
-                    && Objects.equals(phone, otherEditPatientDescriptor.phone)
-                    && Objects.equals(email, otherEditPatientDescriptor.email)
-                    && Objects.equals(address, otherEditPatientDescriptor.address)
-                    && Objects.equals(tags, otherEditPatientDescriptor.tags);
+            EditPersonDescriptor otherEditPersonDescriptor = (EditPersonDescriptor) other;
+            return Objects.equals(name, otherEditPersonDescriptor.name)
+                    && Objects.equals(phone, otherEditPersonDescriptor.phone)
+                    && Objects.equals(email, otherEditPersonDescriptor.email)
+                    && Objects.equals(address, otherEditPersonDescriptor.address)
+                    && Objects.equals(tags, otherEditPersonDescriptor.tags);
         }
 
         @Override

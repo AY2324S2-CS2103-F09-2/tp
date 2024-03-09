@@ -11,11 +11,11 @@ import seedu.address.model.patient.UniquePatientList;
 
 /**
  * Wraps all data at the address-book level
- * Duplicates are not allowed (by .isSamePatient comparison)
+ * Duplicates are not allowed (by .isSamePerson comparison)
  */
 public class AddressBook implements ReadOnlyAddressBook {
 
-    private final UniquePatientList patients;
+    private final UniquePatientList persons;
 
     /*
      * The 'unusual' code block below is a non-static initialization block, sometimes used to avoid duplication
@@ -25,13 +25,13 @@ public class AddressBook implements ReadOnlyAddressBook {
      *   among constructors.
      */
     {
-        patients = new UniquePatientList();
+        persons = new UniquePatientList();
     }
 
     public AddressBook() {}
 
     /**
-     * Creates an AddressBook using the Patients in the {@code toBeCopied}
+     * Creates an AddressBook using the Persons in the {@code toBeCopied}
      */
     public AddressBook(ReadOnlyAddressBook toBeCopied) {
         this();
@@ -44,8 +44,8 @@ public class AddressBook implements ReadOnlyAddressBook {
      * Replaces the contents of the patient list with {@code patients}.
      * {@code patients} must not contain duplicate patients.
      */
-    public void setPatients(List<Patient> patients) {
-        this.patients.setPatients(patients);
+    public void setPersons(List<Patient> patients) {
+        this.persons.setPatients(patients);
     }
 
     /**
@@ -54,7 +54,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void resetData(ReadOnlyAddressBook newData) {
         requireNonNull(newData);
 
-        setPatients(newData.getPatientList());
+        setPersons(newData.getPersonList());
     }
 
     //// patient-level operations
@@ -62,17 +62,17 @@ public class AddressBook implements ReadOnlyAddressBook {
     /**
      * Returns true if a patient with the same identity as {@code patient} exists in the address book.
      */
-    public boolean hasPatient(Patient patient) {
+    public boolean hasPerson(Patient patient) {
         requireNonNull(patient);
-        return patients.contains(patient);
+        return persons.contains(patient);
     }
 
     /**
      * Adds a patient to the address book.
      * The patient must not already exist in the address book.
      */
-    public void addPatient(Patient p) {
-        patients.add(p);
+    public void addPerson(Patient p) {
+        persons.add(p);
     }
 
     /**
@@ -81,18 +81,18 @@ public class AddressBook implements ReadOnlyAddressBook {
      * The patient identity of {@code editedPatient} must not be the
      * same as another existing patient in the address book.
      */
-    public void setPatient(Patient target, Patient editedPatient) {
+    public void setPerson(Patient target, Patient editedPatient) {
         requireNonNull(editedPatient);
 
-        patients.setPatient(target, editedPatient);
+        persons.setPatient(target, editedPatient);
     }
 
     /**
      * Removes {@code key} from this {@code AddressBook}.
      * {@code key} must exist in the address book.
      */
-    public void removePatient(Patient key) {
-        patients.remove(key);
+    public void removePerson(Patient key) {
+        persons.remove(key);
     }
 
     //// util methods
@@ -100,13 +100,13 @@ public class AddressBook implements ReadOnlyAddressBook {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("patients", patients)
+                .add("patients", persons)
                 .toString();
     }
 
     @Override
-    public ObservableList<Patient> getPatientList() {
-        return patients.asUnmodifiableObservableList();
+    public ObservableList<Patient> getPersonList() {
+        return persons.asUnmodifiableObservableList();
     }
 
     @Override
@@ -121,11 +121,11 @@ public class AddressBook implements ReadOnlyAddressBook {
         }
 
         AddressBook otherAddressBook = (AddressBook) other;
-        return patients.equals(otherAddressBook.patients);
+        return persons.equals(otherAddressBook.persons);
     }
 
     @Override
     public int hashCode() {
-        return patients.hashCode();
+        return persons.hashCode();
     }
 }
