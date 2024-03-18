@@ -227,13 +227,13 @@ with(this){return _c('h3',{attrs:{"id":"3-3-adding-important-dates-to-a-patient"
 with(this){return _c('h4',{attrs:{"id":"introduction-3"}},[_v("Introduction"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#introduction-3","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddImportantDate")]),_v(" class is responsible for adding an Important Date to a patient in the address book. I")])}
+with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddEvent")]),_v(" class is responsible for adding an Important Date to a patient in the address book. I")])}
 },function anonymous(
 ) {
 with(this){return _c('h4',{attrs:{"id":"specifications-3"}},[_v("Specifications"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#specifications-3","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("ImportantDates, as defined by the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("ImportantDate")]),_v(" class, contain both the Name of the Event that falls on that date, as well as the Date of the Event and optionally, the Time Period for which the Event is happening.")])]),_v(" "),_c('li',[_c('p',[_v("The addition of Important Dates is cumulative, and new Important Dates will be added to the existing set of Important Dates for the patient, preserving the previously assigned Important Dates.")])]),_v(" "),_c('li',[_c('p',[_v("If the patient already has a particular Important Date, it will not be added again.")])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("Events, as defined by the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Event")]),_v(" class, contain both the Name of the Event that falls on that date, as well as the Date of the Event and optionally, the Time Period for which the Event is happening.")])]),_v(" "),_c('li',[_c('p',[_v("The addition of Important Dates is cumulative, and new Important Dates will be added to the existing set of Important Dates for the patient, preserving the previously assigned Important Dates.")])]),_v(" "),_c('li',[_c('p',[_v("If the patient already has a particular Important Date, it will not be added again.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('h4',{attrs:{"id":"example-usage-scenario-3"}},[_v("Example Usage Scenario"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#example-usage-scenario-3","onclick":"event.stopPropagation()"}})])}
@@ -242,7 +242,7 @@ with(this){return _c('h4',{attrs:{"id":"example-usage-scenario-3"}},[_v("Example
 with(this){return _c('p',[_v("Step 2: The user executes the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("adde 1 n/ Birthday d/ 20-01-2022")]),_v(" command to add the Important Date, Birthday, which falls on the 20th January.")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("Upon successful validation, it creates an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddImportantDatesCommand")]),_v(" instance.")])])}
+with(this){return _c('ul',[_c('li',[_v("Upon successful validation, it creates an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddEventsCommand")]),_v(" instance.")])])}
 },function anonymous(
 ) {
 with(this){return _c('h3',{attrs:{"id":"3-4-editing-a-patient"}},[_v("3.4 Editing a Patient"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#3-4-editing-a-patient","onclick":"event.stopPropagation()"}})])}
@@ -287,13 +287,13 @@ with(this){return _c('h3',{attrs:{"id":"3-5-deleting-important-date-from-a-patie
 with(this){return _c('h4',{attrs:{"id":"introduction-5"}},[_v("Introduction"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#introduction-5","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteImportantDateCommand")]),_v(" class is responsible for deleting an Important Date from a patient in the address book. I")])}
+with(this){return _c('p',[_v("The "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteEventCommand")]),_v(" class is responsible for deleting an Important Date from a patient in the address book. I")])}
 },function anonymous(
 ) {
 with(this){return _c('h4',{attrs:{"id":"specifications-5"}},[_v("Specifications"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#specifications-5","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("DeleteImportantDateCommand takes in two parameters: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("PATIENT_INDEX")]),_v(" and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EVENT_INDEX")]),_v(" which are Indexes of patients\nshown on the UI after using the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("list")]),_v(" or "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command and Indexes of the specified Patient's events as defined in\nthe "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Index")]),_v(" class.")])]),_v(" "),_c('li',[_c('p',[_v("Deletion of important date can only happen for a single patient, and a single event at any given time.")])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("DeleteEventCommand takes in two parameters: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("PATIENT_INDEX")]),_v(" and "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("EVENT_INDEX")]),_v(" which are Indexes of patients\nshown on the UI after using the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("list")]),_v(" or "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("find")]),_v(" command and Indexes of the specified Patient's events as defined in\nthe "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Index")]),_v(" class.")])]),_v(" "),_c('li',[_c('p',[_v("Deletion of important date can only happen for a single patient, and a single event at any given time.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('h4',{attrs:{"id":"example-usage-scenario-5"}},[_v("Example Usage Scenario"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#example-usage-scenario-5","onclick":"event.stopPropagation()"}})])}
@@ -302,13 +302,13 @@ with(this){return _c('h4',{attrs:{"id":"example-usage-scenario-5"}},[_v("Example
 with(this){return _c('p',[_v("Step 2: The user executes the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("adde 1 n/ Birthday d/ 20-01-2022")]),_v(" command to add the Important Date, Birthday,\nwhich falls on the 20th January.")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("Upon successful validation, it creates an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddImportantDatesCommand")]),_v(" instance.")])])}
+with(this){return _c('ul',[_c('li',[_v("Upon successful validation, it creates an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddEventsCommand")]),_v(" instance.")])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("Step 3: The use executes the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("deletee 1 e/1 command")]),_v(" to delete the Important Date as he realised he keyed in the wrong\ndate.")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("Upon successful validation,  an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteImportantDateCommand")]),_v(" instance is created.")])])}
+with(this){return _c('ul',[_c('li',[_v("Upon successful validation,  an "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("DeleteEventCommand")]),_v(" instance is created.")])])}
 },function anonymous(
 ) {
 with(this){return _c('h4',{attrs:{"id":"design-considerations-4"}},[_v("Design Considerations"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations-4","onclick":"event.stopPropagation()"}})])}
@@ -587,6 +587,6 @@ with(this){return _c('h3',{attrs:{"id":"7-3-saving-data"}},[_v("7.3 Saving data"
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing/corrupted data files")]),_v(" "),_c('ol',[_c('li',[_c('em',[_v("{explain how to simulate a missing/corrupted file, and the expected behavior}")])])])]),_v(" "),_c('li',[_c('p',[_c('em',[_v("{ more test cases …​ }")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.3.0")]),_v(", generated on Mon, 18 Mar 2024, 13:56:34 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.3.0")]),_v(", generated on Mon, 18 Mar 2024, 14:28:04 GMT+8]")])])])}
 }];
   
