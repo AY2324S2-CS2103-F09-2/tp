@@ -61,6 +61,8 @@
         "3-6-deleting-an-event-from-a-patient": "3.6 Deleting an Event from a Patient",
         "3-7-editing-an-event-for-a-patient": "3.7 Editing an Event for a Patient",
         "3-8-deleting-a-patient": "3.8 Deleting a Patient",
+        "3-9-listing-all-patients": "3.9 Listing all Patients",
+        "specifications-9": "Specifications",
         "4-planned-enhancements": "4 Planned Enhancements",
         "4-1-proposed-undo-redo-feature": "4.1 [Proposed] Undo/redo feature",
         "5-documentation-logging-testing-configuration-dev-ops": "5 Documentation, logging, testing, configuration, dev-ops",
