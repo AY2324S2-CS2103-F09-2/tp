@@ -63,6 +63,7 @@
         "3-8-deleting-a-patient": "3.8 Deleting a Patient",
         "3-9-listing-all-patients": "3.9 Listing all Patients",
         "specifications-9": "Specifications",
+        "3-10-locating-patients-by-name": "3.10 Locating patients by name",
         "4-planned-enhancements": "4 Planned Enhancements",
         "4-1-proposed-undo-redo-feature": "4.1 [Proposed] Undo/redo feature",
         "5-documentation-logging-testing-configuration-dev-ops": "5 Documentation, logging, testing, configuration, dev-ops",
