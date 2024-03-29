@@ -1,0 +1,27 @@
+@startuml
+start
+:User wants to delete event from a patient;
+:User runs the "deletee" command with patient index and event index;
+if () then ([else])
+    :PatientSync throws an error;
+else ([Valid command format])
+    :PatientSync checks if the patient index is valid;
+    if () then ([else])
+        :PatientSync throws an error;
+    else ([Valid patient index])
+        :PatientSync retrieves the patient with the specified index;
+        :PatientSync retrieves the set of events from the specified patient;
+        :PatientSync checks if the event index is valid;
+        if () then ([else])
+            :PatientSync throws an error;
+        else ([Valid event index])
+            :PatientSync retrieves the event with the specified index;
+            :PatientSync deletes the event from the set of events;
+            :PatientSync updates the event set for the specified patient;
+            :PatientSync updates the displayed patient list;
+        endif
+    endif
+endif
+:PatientSync displays output message;
+stop
+@enduml
