@@ -1,0 +1,31 @@
+@startuml
+start
+:User wants to add an event to a patient;
+:User runs the "adde" command with index, event name and date / datetime of the event;
+if () then ([else])
+    :PatientSync throws an error;
+    :PatientSync adds error message to output;
+else ([Valid command format])
+    :PatientSync checks if the index is valid;
+    if () then ([else])
+        :PatientSync throws an error;
+        :PatientSync adds error message to output;
+    else ([Valid index])
+        if () then ([else])
+            :PatientSync throws an error;
+            :PatientSync adds error message to output;
+        else ([Valid event details])
+            if () then ([Event already exists in patient's event set])
+                :PatientSync adds duplicate event message to output;
+            else ([else])
+                :PatientSync generates the event to be added;
+                :PatientSync adds the event to the set of events for the patient;
+                :PatientSync updates the displayed patient list;
+                :PatientSync adds success message to output;
+            endif
+        endif
+    endif
+endif
+:PatientSync displays output on GUI;
+stop
+@enduml
