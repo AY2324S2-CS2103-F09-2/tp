@@ -15,10 +15,10 @@ else ([Valid command format])
             :PatientSync throws an error;
             :PatientSync adds error message to output;
         else ([Valid event details])
+            :PatientSync generates the event to be added;
             if () then ([Event already exists in patient's event set])
                 :PatientSync adds duplicate event message to output;
             else ([else])
-                :PatientSync generates the event to be added;
                 :PatientSync adds the event to the set of events for the patient;
                 :PatientSync updates the displayed patient list;
                 :PatientSync adds success message to output;
