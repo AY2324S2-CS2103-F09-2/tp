@@ -6,21 +6,23 @@ if () then ([else])
     :PatientSync throws an error;
     :PatientSync adds error message to output;
 else ([Valid command format])
-    :PatientSync checks if the patient index is valid;
+    :PatientSync checks if the event details provided are valid;
     if () then ([else])
         :PatientSync throws an error;
         :PatientSync adds error message to output;
-    else ([Valid patient index])
-        :PatientSync checks if the event index is valid;
+    else ([Valid event details])
+        :PatientSync checks if the patient index is valid;
         if () then ([else])
             :PatientSync throws an error;
             :PatientSync adds error message to output;
-        else ([Valid event index])
+        else ([Valid patient index])
+            :PatientSync checks if the event index is valid;
             if () then ([else])
                 :PatientSync throws an error;
                 :PatientSync adds error message to output;
-            else ([Valid event details])
-                if () then ([Duplicate event])
+            else ([Valid event index])
+                :PatientSync generates the event to be edited;
+                if () then ([Event already exist in the current event list])
                     :PatientSync throws an error;
                     :PatientSync adds error message to output;
                 else ([else])
@@ -33,6 +35,6 @@ else ([Valid command format])
         endif
     endif
 endif
-:PatientSync displays output on GUI;
+:PatientSync displays output message on GUI;
 stop
 @enduml
