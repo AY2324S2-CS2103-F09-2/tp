@@ -1,0 +1,38 @@
+@startuml
+start
+:User wants to edit an event for a patient;
+:User runs the "edite" command with patient index, event index, new event name and new date / datetime of the event;
+if () then ([else])
+    :PatientSync throws an error;
+    :PatientSync adds error message to output;
+else ([Valid command format])
+    :PatientSync checks if the patient index is valid;
+    if () then ([else])
+        :PatientSync throws an error;
+        :PatientSync adds error message to output;
+    else ([Valid patient index])
+        :PatientSync checks if the event index is valid;
+        if () then ([else])
+            :PatientSync throws an error;
+            :PatientSync adds error message to output;
+        else ([Valid event index])
+            if () then ([else])
+                :PatientSync throws an error;
+                :PatientSync adds error message to output;
+            else ([Valid event details])
+                if () then ([Duplicate event])
+                    :PatientSync throws an error;
+                    :PatientSync adds error message to output;
+                else ([else])
+                    :PatientSync edits the specified event;
+                    :PatientSync updates the set of events for the patient;
+                    :PatientSync updates the displayed patient list;
+                    :PatientSync adds success message to output;
+                endif
+            endif
+        endif
+    endif
+endif
+:PatientSync displays output on GUI;
+stop
+@enduml
