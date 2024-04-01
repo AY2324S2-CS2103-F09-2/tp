@@ -6,15 +6,16 @@ if () then ([else])
     :PatientSync throws an error;
     :PatientSync adds error message to output;
 else ([Valid command format])
-    :PatientSync checks if the index is valid;
+    :PatientSync checks if the event details provided are valid;
     if () then ([else])
         :PatientSync throws an error;
         :PatientSync adds error message to output;
-    else ([Valid index])
+    else ([Valid event details])
+        :PatientSync checks if the index provided is valid;
         if () then ([else])
             :PatientSync throws an error;
             :PatientSync adds error message to output;
-        else ([Valid event details])
+        else ([Valid index])
             :PatientSync generates the event to be added;
             if () then ([Event already exists in patient's event set])
                 :PatientSync adds duplicate event message to output;
@@ -26,6 +27,6 @@ else ([Valid command format])
         endif
     endif
 endif
-:PatientSync displays output on GUI;
+:PatientSync displays output message on GUI;
 stop
 @enduml
