@@ -1,0 +1,20 @@
+@startuml
+start
+:User wants to sort patient list;
+:User runs the "sort" command with attribute;
+if () then ([else])
+    :PatientSync throws an error;
+else ([Valid command format])
+    :PatientSync checks if the attribute is valid;
+    if () then ([else])
+        :PatientSync throws an error;
+    else ([Valid attribute])
+        :PatientSync retrieves the patient list with all the patients;
+        :PatientSync sorts the patient list by specified attribute;
+        :PatientSync updates the patient list with the sorted patient list;
+        :PatientSync displays the sorted patient list;
+        :PatientSync displays output message;
+    endif
+endif
+stop
+@enduml
