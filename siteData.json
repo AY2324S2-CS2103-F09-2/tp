@@ -62,12 +62,12 @@
         "3-7-editing-an-event-for-a-patient": "3.7 Editing an Event for a Patient",
         "3-8-deleting-a-patient": "3.8 Deleting a Patient",
         "3-9-listing-all-patients": "3.9 Listing all Patients",
-        "specifications-9": "Specifications",
         "3-10-locating-patients-by-name": "3.10 Locating patients by name",
         "3-11-locating-patients-by-tag": "3.11 Locating patients by tag",
         "3-12-sorting-patients-by-specified-attributes": "3.12 Sorting patients by specified attributes",
         "4-planned-enhancements": "4 Planned Enhancements",
-        "4-1-proposed-undo-redo-feature": "4.1 [Proposed] Undo/redo feature",
+        "4-1-input-validation-and-error-handling": "4.1 Input Validation and Error Handling",
+        "4-2-edit-tags-feature": "4.2 Edit tags feature",
         "5-documentation-logging-testing-configuration-dev-ops": "5 Documentation, logging, testing, configuration, dev-ops",
         "6-appendix-requirements": "6 Appendix: Requirements",
         "6-1-product-scope": "6.1 Product scope",
@@ -77,8 +77,7 @@
         "6-5-glossary": "6.5 Glossary",
         "7-appendix-instructions-for-manual-testing": "7 Appendix: Instructions for manual testing",
         "7-1-launch-and-shutdown": "7.1 Launch and shutdown",
-        "7-2-deleting-a-patient": "7.2 Deleting a patient",
-        "7-3-saving-data": "7.3 Saving data"
+        "7-2-deleting-a-patient": "7.2 Deleting a patient"
       },
       "headingKeywords": {}
     },
