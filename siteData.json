@@ -75,6 +75,7 @@
         "4-7-implementation-on-patienthospitalid": "4.7 Implementation on PatientHospitalId",
         "4-8-displaying-patienthospitalid-in-ui": "4.8 Displaying PatientHospitalId in UI",
         "4-9-standardise-error-message-for-index-out-of-bounds-errors": "4.9 Standardise Error Message for Index Out of Bounds Errors",
+        "4-10-implement-a-specific-error-message-for-invalid-attributes-in-sort-command": "4.10 Implement a specific error message for invalid attributes in sort command",
         "5-documentation-logging-testing-configuration-dev-ops": "5 Documentation, logging, testing, configuration, dev-ops",
         "6-appendix-requirements": "6 Appendix: Requirements",
         "6-1-product-scope": "6.1 Product scope",

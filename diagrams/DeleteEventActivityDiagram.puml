@@ -19,9 +19,9 @@ else ([Valid command format])
             :PatientSync deletes the event from the set of events;
             :PatientSync updates the event set for the specified patient;
             :PatientSync updates the displayed patient list;
+            :PatientSync displays delete event success message;
         endif
     endif
 endif
-:PatientSync displays output message;
 stop
 @enduml

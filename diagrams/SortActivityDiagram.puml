@@ -13,7 +13,7 @@ else ([Valid command format])
         :PatientSync sorts the patient list by specified attribute;
         :PatientSync updates the patient list with the sorted patient list;
         :PatientSync displays the sorted patient list;
-        :PatientSync displays output message;
+        :PatientSync displays sort success message;
     endif
 endif
 stop

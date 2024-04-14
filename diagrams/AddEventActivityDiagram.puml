@@ -4,29 +4,25 @@ start
 :User runs the "adde" command with index, event name and date / datetime of the event;
 if () then ([else])
     :PatientSync throws an error;
-    :PatientSync adds error message to output;
 else ([Valid command format])
     :PatientSync checks if the event details provided are valid;
     if () then ([else])
         :PatientSync throws an error;
-        :PatientSync adds error message to output;
     else ([Valid event details])
         :PatientSync checks if the index provided is valid;
         if () then ([else])
             :PatientSync throws an error;
-            :PatientSync adds error message to output;
         else ([Valid index])
             :PatientSync generates the event to be added;
             if () then ([Event already exists in patient's event set])
-                :PatientSync adds duplicate event message to output;
+                :PatientSync displays warning message that event already exists;
             else ([else])
                 :PatientSync adds the event to the set of events for the patient;
                 :PatientSync updates the displayed patient list;
-                :PatientSync adds success message to output;
+                :PatientSync displays add event success message;
             endif
         endif
     endif
 endif
-:PatientSync displays output message on GUI;
 stop
 @enduml
