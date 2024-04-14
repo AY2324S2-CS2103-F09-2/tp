@@ -74,6 +74,7 @@
         "4-6-input-validation-for-patient-s-name": "4.6 Input Validation for Patient's Name",
         "4-7-implementation-on-patienthospitalid": "4.7 Implementation on PatientHospitalId",
         "4-8-displaying-patienthospitalid-in-ui": "4.8 Displaying PatientHospitalId in UI",
+        "4-9-standardise-error-message-for-index-out-of-bounds-errors": "4.9 Standardise Error Message for Index Out of Bounds Errors",
         "5-documentation-logging-testing-configuration-dev-ops": "5 Documentation, logging, testing, configuration, dev-ops",
         "6-appendix-requirements": "6 Appendix: Requirements",
         "6-1-product-scope": "6.1 Product scope",
