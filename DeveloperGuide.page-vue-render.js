@@ -170,25 +170,25 @@ with(this){return _c('p',[_v("The following UML sequence diagram illustrates how
 with(this){return _c('h4',{attrs:{"id":"design-considerations"}},[_v("Design Considerations"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"aspect-of-handling-duplicated-fields"}},[_v("Aspect of Handling Duplicated Fields"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#aspect-of-handling-duplicated-fields","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('p',[_c('strong',[_v("Aspect: Handle Duplicated Fields")])])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_c('strong',[_v("Alternative 1 (current choice)")]),_v(": Returns error message, prompt user to enter the correct format.\n"),_c('ul',[_c('li',[_v("Pros: Ensure the consistency of entries of the input command.")]),_v(" "),_c('li',[_v("Cons: User has to retype the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("AddCommand")]),_v(" once again instead of the specific field.\n"),_c('br'),_c('br')])])]),_v(" "),_c('li',[_c('strong',[_v("Alternative 2")]),_v(": Add patient's information to the list, for duplicated fields, take the first one.\n"),_c('ul',[_c('li',[_v("Pros: User does not have to retype the command.")]),_v(" "),_c('li',[_v("Cons: Introduce ambiguity, the first repeated field may not be what user wish to enter.")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"aspect-of-choice-of-patienthospitalid"}},[_v("Aspect of Choice of PatientHospitalId"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#aspect-of-choice-of-patienthospitalid","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('p',[_c('strong',[_v("Aspect: Choice of PatientHospitalId field")])])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_c('strong',[_v("Alternative 1 (current choice)")]),_v(": Use patient's ID in the hospital.\n"),_c('ul',[_c('li',[_v("Pros: Uniquely identifies the patient in the hospital.")]),_v(" "),_c('li',[_v("Cons: First time user will be confused about the usage of "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("PatientHospitalId")]),_v(".\n"),_c('br'),_c('br')])])]),_v(" "),_c('li',[_c('strong',[_v("Alternative 2")]),_v(": Use patient's NRIC as the ID.\n"),_c('ul',[_c('li',[_v("Pros: Easier to type and refer.")]),_v(" "),_c('li',[_v("Cons: NRIC is confidential and sensitive information, it breaches PDPA since this is a personal use application.")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"aspect-of-handling-existing-patient"}},[_v("Aspect of Handling Existing Patient"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#aspect-of-handling-existing-patient","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('p',[_c('strong',[_v("Aspect: Handle Existing Patient")])])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_c('strong',[_v("Alternative 1 (current choice)")]),_v(": Returns error message upon user adds a new patient with existing "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("patientHospitalId")]),_v(" "),_c('ul',[_c('li',[_v("Pros: Ensures that no same patient will be added to PatientSync.")]),_v(" "),_c('li',[_v("Cons: User has to enter patient's hospital ID in care to ensure no duplications.\n"),_c('br'),_c('br')])])]),_v(" "),_c('li',[_c('strong',[_v("Alternative 2")]),_v(": Check duplicated patient by patient's "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("name")]),_v(".\n"),_c('ul',[_c('li',[_v("Pros: Easier to view as patient's "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("name")]),_v(" will be easier to be remembered.")]),_v(" "),_c('li',[_v("Cons: Patients may have the same name.")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"aspect-of-handling-multiple-inputs-for-same-field"}},[_v("Aspect of Handling Multiple Inputs for Same Field"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#aspect-of-handling-multiple-inputs-for-same-field","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('p',[_c('strong',[_v("Aspect: Handle Multiple Inputs for the Same Field")])])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_c('strong',[_v("Alternative 1 (current choice)")]),_v(": Allow duplicate prefixes for certain fields\n"),_c('ul',[_c('li',[_v("Pros: Easier to view as listings will be shown without commas, provide clearer view to user.")]),_v(" "),_c('li',[_v("Cons: User may find it confusing if same prefix not being entered repeatedly.")])])]),_v(" "),_c('li',[_c('strong',[_v("Alternative 2")]),_v(": Adds "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v(",")]),_v(" to the specific field\n"),_c('ul',[_c('li',[_v("Pros: Ensures that there are no duplicate prefixes in the input command.")]),_v(" "),_c('li',[_v("Cons: Display may be messy if inputs are long with more than 1 comma.\n"),_c('br'),_c('br')])])])])}
@@ -356,13 +356,13 @@ with(this){return _c('p',[_v("The following UML sequence diagram illustrates how
 with(this){return _c('h4',{attrs:{"id":"design-considerations-5"}},[_v("Design Considerations"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#design-considerations-5","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"aspect-of-using-identifier"}},[_v("Aspect of Using Identifier"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#aspect-of-using-identifier","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('p',[_c('strong',[_v("Aspect: Usage of Identifier")])])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_c('strong',[_v("Alternative 1 (current choice)")]),_v(": Uses "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("INDEX")]),_v(" index of the Patient in the PatientSync.\n"),_c('ul',[_c('li',[_v("Pros: Ease of use, as user can refer to the index in the PatientSync directly.")]),_v(" "),_c('li',[_v("Cons: Referring and scrolling the PatientSync may take time to find the patient's index.\n"),_c('br'),_c('br')])])]),_v(" "),_c('li',[_c('strong',[_v("Alternative 2")]),_v(": Uses "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("patientHospitalId")]),_v(" of a Patient.\n"),_c('ul',[_c('li',[_v("Pros: Able to uniquely identified each patient.")]),_v(" "),_c('li',[_v("Cons: Higher chance in typing the wrong "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("patientHospitalId")]),_v(".")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('h4',{attrs:{"id":"aspect-of-bulk-editing-for-certain-field"}},[_v("Aspect of Bulk Editing for Certain Field"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#aspect-of-bulk-editing-for-certain-field","onclick":"event.stopPropagation()"}})])}
+with(this){return _c('p',[_c('strong',[_v("Aspect: Bulk Edit for Certain Field")])])}
 },function anonymous(
 ) {
 with(this){return _c('ul',[_c('li',[_c('strong',[_v("Alternative 1 (current choice)")]),_v(": Bulk edit a certain field.\n"),_c('ul',[_c('li',[_v("Pros: User able to edit the field easily.")]),_v(" "),_c('li',[_v("Cons: Input(s) that might be needed/ kept will be replaced by the newly edited ones.\n"),_c('br'),_c('br')])])]),_v(" "),_c('li',[_c('strong',[_v("Alternative 2")]),_v(": Edit field by specifying the certain input needed to be changed.")]),_v(" "),_c('li',[_v("Pros: Able to uniquely identified which specific input needed to be edited.")]),_v(" "),_c('li',[_v("Cons: More time consuming to input command line as it will be longer.")])])}
@@ -1028,6 +1028,6 @@ with(this){return _c('h3',{attrs:{"id":"7-13-sorting-the-patient-list"}},[_v("7.
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Sorting the patient list")]),_v(" "),_c('ol',[_c('li',[_c('p',[_v("Prerequisites: Patient List should not be empty.")])]),_v(" "),_c('li',[_c('p',[_v("Test case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sort p")]),_c('br'),_v("\nExpected: The patient list is sorted by patient's preferred name.")])]),_v(" "),_c('li',[_c('p',[_v("Other incorrect sort command to try: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sort name")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sort 1")]),_c('br'),_v("\nExpected: Error message displayed.")])])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Sun, 14 Apr 2024, 23:01:42 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Sun, 14 Apr 2024, 23:11:55 GMT+8]")])])])}
 }];
   
