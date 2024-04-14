@@ -83,8 +83,19 @@
         "6-4-non-functional-requirements": "6.4 Non-Functional Requirements",
         "6-5-glossary": "6.5 Glossary",
         "7-appendix-instructions-for-manual-testing": "7 Appendix: Instructions for manual testing",
-        "7-1-launch-and-shutdown": "7.1 Launch and shutdown",
-        "7-2-deleting-a-patient": "7.2 Deleting a patient"
+        "7-1-launch-and-window-preferences": "7.1 Launch and window preferences",
+        "7-2-adding-a-patient": "7.2 Adding a patient",
+        "7-3-deleting-a-patient": "7.3 Deleting a patient",
+        "7-4-listing-all-patients": "7.4 Listing all patients",
+        "7-5-editing-a-patient": "7.5 Editing a patient",
+        "7-6-finding-a-patient-by-name": "7.6 Finding a patient by name",
+        "7-7-adding-tags-to-a-patient": "7.7 Adding tags to a patient",
+        "7-8-deleting-tags-from-a-patient": "7.8 Deleting tags from a patient",
+        "7-9-finding-patients-by-tag": "7.9 Finding patients by tag",
+        "7-10-adding-an-event-to-a-patient": "7.10 Adding an event to a patient",
+        "7-11-deleting-an-event-from-a-patient": "7.11 Deleting an event from a patient",
+        "7-12-editing-an-event-for-a-patient": "7.12 Editing an event for a patient",
+        "7-13-sorting-the-patient-list": "7.13 Sorting the patient list"
       },
       "headingKeywords": {}
     },
