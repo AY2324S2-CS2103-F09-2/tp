@@ -1,0 +1,19 @@
+@startuml
+start
+:User wants to delete a patient;
+:User runs the "delete" command with patient index;
+if () then ([else])
+    :PatientSync throws an error;
+else ([Valid command format])
+    :PatientSync checks if the patient index provided is valid;
+    if () then ([else])
+        :PatientSync throws an error;
+    else ([Valid patient index])
+        :PatientSync retrieve the patient with the specified patient index;
+        :PatientSync deletes the patient from the patient list;
+        :PatientSync updates the displayed patient list;
+        :PatientSync displays delete success message;
+    endif
+endif
+stop
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+start
+:User wants to find a patient by name;
+:User runs the "find" command with keyword(s);
+if () then ([else])
+    :PatientSync throws an error;
+else ([Valid command format])
+    :PatientSync searches to see whether any keyword(s) matches any name from all the existing patients;
+    :PatientSync updates the displayed patient list with those patients whose name matches any of the keywords;
+    :PatientSync displays find patient by name success message;
+endif
+stop
+@enduml
