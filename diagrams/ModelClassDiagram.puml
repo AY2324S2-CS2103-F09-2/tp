@@ -52,9 +52,5 @@ Patient *--> "*" Event
 Patient -[hidden]up--> I
 UniquePatientList -[hidden]right-> I
 
-Name -[hidden]right-> Phone
-Phone -[hidden]right-> Address
-Address -[hidden]right-> Email
-
 ModelManager --> "~* filtered" Patient
 @enduml
