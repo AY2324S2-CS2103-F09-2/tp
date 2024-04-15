@@ -42,6 +42,10 @@ JsonUserPrefsStorage .up.|> UserPrefsStorage
 JsonAddressBookStorage .up.|> AddressBookStorage
 JsonAddressBookStorage ..> JsonSerializableAddressBook
 JsonSerializableAddressBook --> "*" JsonAdaptedPatient
+JsonAdaptedPatient --> JsonAdaptedFamilyCondition
+JsonAdaptedPatient --> JsonAdaptedFoodPreference
+JsonAdaptedPatient --> JsonAdaptedHobby
+JsonAdaptedPatient --> "*" JsonAdaptedEvent
 JsonAdaptedPatient --> "*" JsonAdaptedTag
 
 @enduml

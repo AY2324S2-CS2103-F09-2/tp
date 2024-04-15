@@ -41,10 +41,13 @@ UserPrefs .up.|> ReadOnlyUserPrefs
 AddressBook *--> "1" UniquePatientList
 UniquePatientList --> "~* all" Patient
 Patient *--> Name
-Patient *--> Phone
-Patient *--> Email
-Patient *--> Address
+Patient *--> PreferredName
+Patient *--> PatientHospitalId
+Patient *--> FamilyCondition
+Patient *--> FoodPreference
+Patient *--> Hobby
 Patient *--> "*" Tag
+Patient *--> "*" Event
 
 Patient -[hidden]up--> I
 UniquePatientList -[hidden]right-> I

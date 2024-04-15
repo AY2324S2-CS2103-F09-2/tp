@@ -20,5 +20,5 @@ Patient *--> PatientHospitalId
 Patient *--> FamilyCondition
 Patient *--> FoodPreference
 Patient *--> Hobby
-Patient *--> Event
+Patient *--> "*" Event
 @enduml
