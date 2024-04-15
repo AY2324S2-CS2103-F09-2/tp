@@ -14,11 +14,14 @@ Class UserPrefs
 
 Class UniquePatientList
 Class Patient
-Class Address
-Class Email
 Class Name
-Class Phone
+Class PreferredName
+Class PatientHospitalId
+Class FamilyCondition
+Class FoodPreference
+Class Hobby
 Class Tag
+Class Event
 
 Class I #FFFFFF
 }

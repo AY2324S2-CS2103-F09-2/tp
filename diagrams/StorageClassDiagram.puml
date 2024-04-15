@@ -19,7 +19,11 @@ Class "<<interface>>\nAddressBookStorage" as AddressBookStorage
 Class JsonAddressBookStorage
 Class JsonSerializableAddressBook
 Class JsonAdaptedPatient
+Class JsonAdaptedFamilyCondition
+Class JsonAdaptedFoodPreference
+Class JsonAdaptedHobby
 Class JsonAdaptedTag
+Class JsonAdaptedEvent
 }
 
 }

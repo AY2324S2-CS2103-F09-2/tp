@@ -15,7 +15,10 @@ UniquePatientList -right-> Patient
 Patient -up-> "*" Tag
 
 Patient *--> Name
-Patient *--> Phone
-Patient *--> Email
-Patient *--> Address
+Patient *--> PreferredName
+Patient *--> PatientHospitalId
+Patient *--> FamilyCondition
+Patient *--> FoodPreference
+Patient *--> Hobby
+Patient *--> Event
 @enduml
