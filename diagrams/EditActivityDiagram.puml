@@ -1,35 +1,30 @@
 @startuml
 start
 :User wants to edit information (eg. hobby) of a patient;
-:User runs the "edit" command with patient index, details of fields (eg. hobby with command h/Reading h/Singing);
+:User runs the "edit" command with patient index, details of hobby;
 if () then ([else])
     :PatientSync throws an error;
-    :PatientSync adds error message to output;
 else ([Valid command format])
     :PatientSync checks if the patient index is valid;
     if () then ([else])
         :PatientSync throws an error;
-        :PatientSync adds error message to output;
     else ([Valid patient index])
         :PatientSync checks if the prefix(s) is valid;
         if () then ([else])
             :PatientSync throws an error;
-            :PatientSync adds error message to output;
         else ([Valid prefix])
             :PatientSync checks if the input format for the respective prefix is valid;
             if () then ([else])
                 :PatientSync throws an error;
-                :PatientSync adds error message to output;
             else ([Valid input format])
                 :PatientSync generates the information to be edited;
                 :PatientSync edits the specified event;
                 :PatientSync updates the set of events for the patient;
                 :PatientSync updates the displayed patient list;
-                :PatientSync adds success message to output;
+                :PatientSync displays edit patient success message;
             endif
         endif
     endif
 endif
-:PatientSync displays output message on GUI;
 stop
 @enduml

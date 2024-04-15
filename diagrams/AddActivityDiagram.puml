@@ -2,7 +2,7 @@
 
 start
 :User wants to add a patient;
-:User runs the "add" command with id/PATIENT_HOSPITAL_ID n/NAME p/PREFERRED_NAME f/FOOD_PREFERENCE c/FAMILY_CONDITION h/HOBBY;
+:User runs the "add" command with Patient Hospital Id, name, preferred name, food preference, family condition and hobby;
 if () then ([Required prefixes present])
   if () then ([Valid command format])
     :PatientSync checks if the input format for the respective prefix is valid;
@@ -10,28 +10,18 @@ if () then ([Required prefixes present])
       :PatientSync creates Patient object;
       if () then ([Valid Patient Hospital ID])
         :PatientSync adds patient to model;
-        :PatientSync generates success message;
-        :PatientSync returns success message to output;
+        :PatientSync displays add patient success message;
       else ([else])
-        :PatientSync throws command exception;
-        :PatientSync generates error message;
-        :PatientSync returns error message;
+        :PatientSync throws an error;
       endif
     else ([else])
-      :PatientSync throws parse exception;
-      :PatientSync generates error message;
-      :PatientSync returns error message;
+      :PatientSync throws an error;
     endif
   else ([else])
-    :PatientSync throws parse exception;
-    :PatientSync generates error message;
-    :PatientSync returns error message;
+    :PatientSync throws an error;
   endif
 else ([else])
-  :PatientSync throws parse exception;
-  :PatientSync generates error message;
-  :PatientSync returns error message;
+  :PatientSync throws an error;
 endif
-:PatientSync displays output message on GUI;
 stop
 @enduml
