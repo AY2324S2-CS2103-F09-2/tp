@@ -6,7 +6,7 @@ box Logic LOGIC_COLOR_T1
 participant ":LogicManager" as LogicManager LOGIC_COLOR
 participant ":AddressBookParser" as AddressBookParser LOGIC_COLOR
 participant ":DeleteEventCommandParser" as DeleteEventCommandParser LOGIC_COLOR
-participant "a:DeleteEventCommand" as DeleteEventCommand LOGIC_COLOR
+participant "d:DeleteEventCommand" as DeleteEventCommand LOGIC_COLOR
 participant ":CommandResult" as CommandResult LOGIC_COLOR
 end box
 
@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("delete 1 e/ 1")
+[-> LogicManager : execute("deletee 1 e/1")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("delete 1 e/ 1")
+LogicManager -> AddressBookParser : parseCommand("deletee 1 e/1")
 activate AddressBookParser
 
 create DeleteEventCommandParser
@@ -27,23 +27,23 @@ activate DeleteEventCommandParser
 DeleteEventCommandParser --> AddressBookParser
 deactivate DeleteEventCommandParser
 
-AddressBookParser -> DeleteEventCommandParser : parse("delete 1 e/ 1")
+AddressBookParser -> DeleteEventCommandParser : parse("1 e/1")
 activate DeleteEventCommandParser
 
 Create DeleteEventCommand
 DeleteEventCommandParser -> DeleteEventCommand
 activate DeleteEventCommand
 
-DeleteEventCommand --> DeleteEventCommandParser : a
+DeleteEventCommand --> DeleteEventCommandParser : d
 deactivate DeleteEventCommand
 
-DeleteEventCommandParser --> AddressBookParser : a
+DeleteEventCommandParser --> AddressBookParser : d
 deactivate DeleteEventCommandParser
 'Hidden arrow to position the destroy marker below the end of the activation bar.'
 DeleteEventCommandParser -[hidden]-> AddressBookParser
 destroy DeleteEventCommandParser
 
-AddressBookParser --> LogicManager : a
+AddressBookParser --> LogicManager : d
 deactivate AddressBookParser
 
 LogicManager -> DeleteEventCommand : execute()
@@ -55,7 +55,7 @@ activate Model
 Model --> DeleteEventCommand
 deactivate Model
 
-DeleteEventCommand -> Model : updateFilteredPatientList(p)
+DeleteEventCommand -> Model : updateFilteredPatientList(predicate)
 activate Model
 
 Model -> DeleteEventCommand
