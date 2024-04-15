@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute(adde 1 n/Birthday d/20-01-2022)
+[-> LogicManager : execute("adde 1 n/Birthday d/20-01-2022")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand(adde 1 n/Birthday d/20-01-2022)
+LogicManager -> AddressBookParser : parseCommand("adde 1 n/Birthday d/20-01-2022")
 activate AddressBookParser
 
 create AddEventCommandParser
@@ -27,7 +27,7 @@ activate AddEventCommandParser
 AddEventCommandParser --> AddressBookParser
 deactivate AddEventCommandParser
 
-AddressBookParser -> AddEventCommandParser : parse(adde 1 n/Birthday d/20-01-2022)
+AddressBookParser -> AddEventCommandParser : parse("1 n/Birthday d/20-01-2022")
 activate AddEventCommandParser
 
 Create AddEventCommand

@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute(addt 1 t/christian ...)
+[-> LogicManager : execute("addt 1 t/christian")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand(addt 1 t/christian ...)
+LogicManager -> AddressBookParser : parseCommand("addt 1 t/christian")
 activate AddressBookParser
 
 create AddTagsCommandParser
@@ -27,7 +27,7 @@ activate AddTagsCommandParser
 AddTagsCommandParser --> AddressBookParser
 deactivate AddTagsCommandParser
 
-AddressBookParser -> AddTagsCommandParser : parse(addt 1 t/christian ...)
+AddressBookParser -> AddTagsCommandParser : parse("1 t/christian")
 activate AddTagsCommandParser
 
 Create AddTagsCommand

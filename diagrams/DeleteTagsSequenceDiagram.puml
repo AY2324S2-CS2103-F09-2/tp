@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute(deletet 1 t/christian ...)
+[-> LogicManager : execute("deletet 1 t/christian")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand(deletet 1 t/christian ...)
+LogicManager -> AddressBookParser : parseCommand("deletet 1 t/christian")
 activate AddressBookParser
 
 create DeleteTagsCommandParser
@@ -27,7 +27,7 @@ activate DeleteTagsCommandParser
 DeleteTagsCommandParser --> AddressBookParser
 deactivate DeleteTagsCommandParser
 
-AddressBookParser -> DeleteTagsCommandParser : parse(deletet 1 t/christian ...)
+AddressBookParser -> DeleteTagsCommandParser : parse("1 t/christian")
 activate DeleteTagsCommandParser
 
 Create DeleteTagsCommand

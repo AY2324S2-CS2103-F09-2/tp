@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant ":Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute(add id/ 12347 n/ Mary Jane p/ Mary f/ Korean c/ Lives with only daughter h/ Watch Drama)
+[-> LogicManager : execute("add id/ 12347 n/ Mary Jane p/ Mary f/ Korean c/ Lives with only daughter h/ Watch Drama")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand(add id/ 12347 n/ Mary Jane p/ Mary f/ Korean c/ Lives with only daughter h/ Watch Drama)
+LogicManager -> AddressBookParser : parseCommand("add id/ 12347 n/ Mary Jane p/ Mary f/ Korean c/ Lives with only daughter h/ Watch Drama")
 activate AddressBookParser
 
 create AddCommandParser
@@ -27,7 +27,7 @@ activate AddCommandParser
 AddCommandParser --> AddressBookParser
 deactivate AddCommandParser
 
-AddressBookParser -> AddCommandParser : parse(add id/ 12347 n/ Mary Jane p/ Mary f/ Korean c/ Lives with only daughter h/ Watch Drama)
+AddressBookParser -> AddCommandParser : parse("id/ 12347 n/ Mary Jane p/ Mary f/ Korean c/ Lives with only daughter h/ Watch Drama")
 activate AddCommandParser
 
 Create AddCommand

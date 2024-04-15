@@ -27,7 +27,7 @@ activate EditCommandParser
 EditCommandParser --> AddressBookParser
 deactivate EditCommandParser
 
-AddressBookParser -> EditCommandParser : parse("edit 2 f/Aglio-olio t/depression")
+AddressBookParser -> EditCommandParser : parse("2 f/Aglio-olio t/depression")
 activate EditCommandParser
 
 Create EditCommand

@@ -14,10 +14,10 @@ box Model MODEL_COLOR_T1
 participant "m:Model" as Model MODEL_COLOR
 end box
 
-[-> LogicManager : execute("edite 1 e/1 n/event d/20-12-2000")
+[-> LogicManager : execute("edite 1 e/1 n/New Birthday d/20-12-2025")
 activate LogicManager
 
-LogicManager -> AddressBookParser : parseCommand("edite 1 e/1 n/event d/20-12-2000")
+LogicManager -> AddressBookParser : parseCommand("edite 1 e/1 n/New Birthday d/20-12-2025")
 activate AddressBookParser
 
 create EditEventCommandParser
@@ -27,7 +27,7 @@ activate EditEventCommandParser
 EditEventCommandParser --> AddressBookParser
 deactivate EditEventCommandParser
 
-AddressBookParser -> EditEventCommandParser : parse("1 e/1 n/event d/20-12-2000")
+AddressBookParser -> EditEventCommandParser : parse("1 e/1 n/New Birthday d/20-12-2025")
 activate EditEventCommandParser
 
 Create EditEventCommand
