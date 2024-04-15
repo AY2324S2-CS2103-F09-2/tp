@@ -1118,6 +1118,6 @@ with(this){return _c('h3',{attrs:{"id":"7-13-sorting-the-patient-list"}},[_v("7.
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Sorting the patient list")]),_v(" "),_c('ol',[_c('li',[_c('p',[_v("Prerequisites: Patient List should not be empty.")])]),_v(" "),_c('li',[_c('p',[_v("Test case: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sort p")]),_c('br'),_v("\nExpected: The patient list is sorted by patient's preferred name.")])]),_v(" "),_c('li',[_c('p',[_v("Other incorrect sort command to try: "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sort name")]),_v(", "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("sort 1")]),_c('br'),_v("\nExpected: Error message displayed.")])])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Mon, 15 Apr 2024, 21:08:50 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.4.0")]),_v(", generated on Mon, 15 Apr 2024, 21:31:55 GMT+8]")])])])}
 }];
   
